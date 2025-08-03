@@ -1,5 +1,5 @@
 # import needed functions
-from opencommand_parser import parse_input
+from command_parser import parse_input
 from bot_oop import AddressBook, load_data, save_data, add_birthday, show_birthday, show_all, show_phone, add_contact, change_contact, birthdays
 
 
