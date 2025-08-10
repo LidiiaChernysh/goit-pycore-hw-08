@@ -11,12 +11,25 @@ def parse_input(user_input):
         ValueError: if entered incorrect command
     """
 
+    # try:
+    #     cmd, *args = user_input.split()
+    #     cmd = cmd.strip().lower()
+    #     return cmd, args
+
+    # except ValueError:
+    #     return f'Enter correct command'
+    
     try:
-        cmd, *args = user_input.split()
-        cmd = cmd.strip().lower()
+        if not user_input.strip():
+            return "Enter correct command", []
+        
+        parts = user_input.strip().split()
+        cmd = parts[0].strip().lower()
+        args = parts[1:] if len(parts) > 1 else []
+        
         return cmd, args
 
-    except ValueError:
-        return f'Enter correct command'
+    except Exception:
+        return "Enter correct command", []
     
    
